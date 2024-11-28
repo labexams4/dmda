@@ -1,0 +1,12 @@
+library(caret)
+library(mlbench)
+data(BreastCancer, package = "mlbench")
+b_canc = BreastCancer[complete.cases(BreastCancer),]
+b_canc
+set.seed(100)
+Train_Ratio <- createDataPartition(b_canc$Class, p=0.8, list = FALSE)
+Train_Data <- b_canc[Train_Ratio, ]
+Train_Data$Class <- as.numeric(Train_Data$Class)-1
+fit = glm(Class ~ Cell.shape+ Cl.thickness, family="binomial", data = Train_Data)
+fit
+plot(fit)
