@@ -1,10 +1,10 @@
-input<-mtCars[, c("am","mpg", "hp")]
-input<-mtCars
+input<-mtcars[, c("am","mpg", "hp")]
+input<-mtcars
 result<-aov(mpg~hp*am, data = input)
 print(summary(result))
 result<-aov(mpg~hp+am, data = input)
 print(summary(result))
-r1←aov(mpg~hp*am, data = input)
-r2 ← aov(mpg~hp+am, data = input)
+r1<-aov(mpg~hp*am, data = input)
+r2 <-aov(mpg~hp+am, data = input)
 print(anova(r1,r2))
 boxplot(anova(r1,r2))
