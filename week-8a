@@ -1,11 +1,11 @@
-data<-(2,4,6,8,10)
+data<-c(2,4,6,8,10)
 mean_value<- mean(data)
-print(paste("mean",mean_value)
+print(paste("mean",mean_value))
 median_value<-median(data)
-print(paste(median:", median_value)
+print(paste("median:",median_value))
 getmode <-function(data){ 
   uniq_data<-unique(data)
-  uniq_data[which max(tabulate(match(data, uniq-data)))
+  uniq_data[which.max(tabulate(match(data, uniq_data)))]
 }
 result <- getmode(data)
 print(paste("mode:", result))
